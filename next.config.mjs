@@ -9,29 +9,31 @@
 
 // export default nextConfig;
 
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   images: {
-//     remotePatterns: [
-//       {
-//         protocol: "https",
-//         hostname: "exam.elevateegy.com",
-//         pathname: "/uploads/**",
-//       },
-//     ],
-//   },
-// };
-// export default nextConfig;
-
-/**
- * @type {import('next').NextConfig}
- */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "server",
   distDir: "dist",
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "exam.elevateegy.com",
+        pathname: "/uploads/**",
+      },
+    ],
   },
 };
+export default nextConfig;
 
-module.exports = nextConfig;
+// /**
+//  * @type {import('next').NextConfig}
+//  */
+// const nextConfig = {
+//   output: "export",
+
+//   distDir: "dist",
+//   images: {
+//     unoptimized: true,
+//   },
+// };
+
+// module.exports = nextConfig;
