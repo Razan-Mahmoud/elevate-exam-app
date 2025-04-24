@@ -1,0 +1,15 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/questions/route": "app/api/questions/route.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/auth/register/page": "app/auth/register/page.js",
+  "/auth/login/page": "app/auth/login/page.js",
+  "/dashboard/exams/page": "app/dashboard/exams/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/auth/set-new-password/page": "app/auth/set-new-password/page.js",
+  "/auth/forgot-password/page": "app/auth/forgot-password/page.js",
+  "/auth/verify-code/page": "app/auth/verify-code/page.js",
+  "/dashboard/subjects/page": "app/dashboard/subjects/page.js"
+}
