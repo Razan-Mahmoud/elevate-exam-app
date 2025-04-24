@@ -1,13 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: "server",
-  distDir: "dist",
-  images: {
-    unoptimized: true,
-  },
-};
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   output: "server",
+//   distDir: "dist",
+//   images: {
+//     unoptimized: true,
+//   },
+// };
 
-export default nextConfig;
+// export default nextConfig;
 
 // /** @type {import('next').NextConfig} */
 // const nextConfig = {
@@ -23,16 +23,15 @@ export default nextConfig;
 // };
 // export default nextConfig;
 
-// /**
-//  * @type {import('next').NextConfig}
-//  */
-// const nextConfig = {
-//   output: "export",
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
+  output: "server",
+  distDir: "dist",
+  images: {
+    unoptimized: true,
+  },
+};
 
-//   distDir: "dist",
-//   images: {
-//     unoptimized: true,
-//   },
-// };
-
-// module.exports = nextConfig;
+module.exports = nextConfig;
