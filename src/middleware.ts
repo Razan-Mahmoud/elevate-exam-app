@@ -6,7 +6,6 @@ const privatePages = new Set(["/dashboard"]);
 
 export default async function middleware(req: NextRequest) {
   const token = await getToken({ req });
-  token?.token;
 
   //   Protected routing
   if (privatePages.has(req.nextUrl.pathname) && token) {

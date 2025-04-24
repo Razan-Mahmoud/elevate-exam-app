@@ -9,7 +9,7 @@ export default async function SubjectsList() {
   return (
     <div className="grid grid-cols-3 gap-4">
       {payload?.subjects?.map((subject) => (
-        <Link href={`/dashboard/exams`}>
+        <Link key={payload.subjects._id} href={`/dashboard/exams`}>
           <div className="rounded-xl drop-shadow-xl relative">
             <Image
               src={subject.icon}
