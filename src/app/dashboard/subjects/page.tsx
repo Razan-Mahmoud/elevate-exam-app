@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SubjectsList from "./_components/subjects-list";
+import { Suspense } from "react";
 
 export default function SubjectsPage() {
   return (
@@ -10,7 +11,9 @@ export default function SubjectsPage() {
           <p className="text-primary font-semibold">View All</p>
         </Link>
       </div>
-      <SubjectsList />
+      <Suspense fallback="Loading content...">
+        <SubjectsList />
+      </Suspense>
     </section>
   );
 }

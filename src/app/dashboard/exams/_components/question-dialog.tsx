@@ -8,12 +8,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import QuestionsForm from "./questions-form";
+import { Suspense } from "react";
 
 type QuestionDialogProps = {
-  exams: string;
+  exam: string;
 };
 
-export default function QuestionDialog({ exams }: QuestionDialogProps) {
+export default function QuestionDialog({ exam }: QuestionDialogProps) {
   return (
     <Dialog>
       {/* Trigger */}
@@ -33,7 +34,9 @@ export default function QuestionDialog({ exams }: QuestionDialogProps) {
         </DialogHeader>
 
         {/* Content */}
-        <QuestionsForm />
+        <Suspense fallback="Loading questions...">
+          <QuestionsForm />
+        </Suspense>
       </DialogContent>
     </Dialog>
   );

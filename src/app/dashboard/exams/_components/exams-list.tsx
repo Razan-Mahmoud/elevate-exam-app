@@ -33,6 +33,8 @@ export default async function ExamsList() {
             {/* Actions */}
             <div className="flex flex-col ">
               <p>{exam.duration} Minutes</p>
+
+              {/* Question Dialog: press on button */}
               <QuestionDialog exams={exam._id} />
             </div>
           </li>
@@ -41,4 +43,3 @@ export default async function ExamsList() {
     </section>
   );
 }
-// I've arrived at 21:00 mins from video 10:39

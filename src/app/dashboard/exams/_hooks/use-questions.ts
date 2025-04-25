@@ -2,8 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
 
 export default function useQuestions() {
+  // Navigation
   const searchParams = useSearchParams();
 
+  // Querries
   const { isLoading, error, data } = useQuery({
     queryKey: ["exams"],
     queryFn: async () => {
