@@ -35,7 +35,7 @@ export default async function ExamsList() {
               <p>{exam.duration} Minutes</p>
 
               {/* Question Dialog: press on button */}
-              <QuestionDialog exams={exam._id} />
+              <QuestionDialog exam={exam._id} />
             </div>
           </li>
         ))}
