@@ -1,6 +1,6 @@
 // /** @type {import('next').NextConfig} */
 // const nextConfig = {
-//   output: "server",
+//   output: 'standalone' | 'export',
 //   distDir: "dist",
 //   images: {
 //     unoptimized: true,
@@ -11,7 +11,6 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: "dist",
   images: {
     remotePatterns: [
       {
