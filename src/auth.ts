@@ -25,6 +25,7 @@ export const authOptions: NextAuthOptions = {
             ...JSON_HEADER,
           },
         });
+
         const payload: APIResponse<LoginResponse> = await response.json();
 
         if ("code" in payload) {
@@ -51,6 +52,7 @@ export const authOptions: NextAuthOptions = {
     session: ({ session, token }) => {
       session.user = token.user;
       // session.token = token.token;
+
       return session;
     },
   },

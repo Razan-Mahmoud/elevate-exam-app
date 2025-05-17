@@ -6,7 +6,7 @@ export async function getExams() {
       ...(await getAuthHeader()),
     },
   });
-  const payload: APIResponse<PaginatedResponse<{ exams: Exam[] }>> =
-    await response.json();
+  const payload: APIResponse<PaginatedResponse<{ exams: Exam[] }>> = await response.json();
+
   return payload;
 }

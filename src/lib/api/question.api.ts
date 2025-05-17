@@ -6,8 +6,8 @@ export async function getQuestions(searchParams: string) {
       ...(await getAuthHeader()),
     },
   });
-  const payload: APIResponse<PaginatedResponse<{ questions: Question[] }>> =
-    await response.json();
+
+  const payload: APIResponse<PaginatedResponse<{ questions: Question[] }>> = await response.json();
 
   return payload;
 }

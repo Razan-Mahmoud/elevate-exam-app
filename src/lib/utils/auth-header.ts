@@ -1,12 +1,13 @@
 import "server-only";
 
 import { cookies } from "next/headers";
-import { Auth_COOKIE } from "../constants/auth.constant";
+import { AUTH_COOKIE } from "../constants/auth.constant";
 import { decode, JWT } from "next-auth/jwt";
 
 export async function getAuthHeader() {
-  const tokenCookie = cookies().get(Auth_COOKIE)?.value;
+  const tokenCookie = cookies().get(AUTH_COOKIE)?.value;
   let JWT: JWT | null = null;
+
   try {
     JWT = await decode({
       token: tokenCookie,
@@ -15,6 +16,7 @@ export async function getAuthHeader() {
   } catch (error) {
     void error;
   }
+
   return {
     token: JWT?.token || "",
   };

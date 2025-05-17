@@ -1,5 +1,4 @@
 declare type ApplicationUser = {
-  _id: string;
   username: string;
   firstName: string;
   lastName: string;
@@ -7,7 +6,7 @@ declare type ApplicationUser = {
   phone: string;
   role: string;
   isVerified: boolean;
-};
+} & DatabaseProperties;
 
 declare type LoginResponse = {
   token: string;

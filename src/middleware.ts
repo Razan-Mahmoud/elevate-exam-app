@@ -2,24 +2,28 @@ import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 
 const authPages = new Set(["/auth/login", "/auth/register"]);
-const privatePages = new Set(["/dashboard"]);
+const privatePages = new Set(["/dashboard", "/dashboard/subjects", "/dashboard/exams"]);
 
 export default async function middleware(req: NextRequest) {
   const token = await getToken({ req });
 
-  //   Protected routing
-  if (privatePages.has(req.nextUrl.pathname) && token) {
+  // Protected routes
+  if (privatePages.has(req.nextUrl.pathname)) {
     if (token) return NextResponse.next();
+
     const redirectUrl = new URL("/auth/login", req.nextUrl.origin);
     return NextResponse.redirect(redirectUrl);
   }
+
   if (authPages.has(req.nextUrl.pathname)) {
     if (token) {
       const redirectUrl = new URL("/dashboard", req.nextUrl.origin);
       return NextResponse.redirect(redirectUrl);
     }
+
     return NextResponse.next();
   }
+
   return NextResponse.next();
 }
 

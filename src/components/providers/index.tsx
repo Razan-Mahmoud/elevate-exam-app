@@ -1,4 +1,4 @@
-import NextAauthProvider from "./components/next-auth.provider";
+import NextAuthProvider from "./components/next-auth.provider";
 import ReactQueryProvider from "./components/react-query-provider";
 
 type ProvidersProps = {
@@ -8,7 +8,7 @@ type ProvidersProps = {
 export default function Providers({ children }: ProvidersProps) {
   return (
     <ReactQueryProvider>
-      <NextAauthProvider>{children}</NextAauthProvider>
+      <NextAuthProvider>{children}</NextAuthProvider>
     </ReactQueryProvider>
   );
 }

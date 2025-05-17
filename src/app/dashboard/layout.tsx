@@ -1,5 +1,5 @@
-import Header from "./layout/header";
-import Sidebar from "./layout/sidebar";
+import Header from "./_components/layout/header";
+import Sidebar from "./_components/layout/sidebar";
 
 type LayoutProps = {
   children: React.ReactNode;

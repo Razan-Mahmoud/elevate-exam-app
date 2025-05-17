@@ -7,8 +7,8 @@ export async function getAllSubjects() {
     },
   });
 
-  const payload: APIResponse<PaginatedResponse<{ subjects: Subjects[] }>> =
-    await response.json();
+  const payload: APIResponse<PaginatedResponse<{ subjects: Subjects[] }>> = await response.json();
+
   return payload;
 }
 

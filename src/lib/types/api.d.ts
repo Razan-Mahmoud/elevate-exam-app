@@ -13,16 +13,15 @@ declare type ErrorResponse = {
   code: number;
 };
 
+declare type Metadata = {
+  currentPage: number;
+  numberOfPages: number;
+  limit: number;
+};
+
 declare type PaginatedResponse<T> = {
   metadata: Metadata;
   subjects: Subjects;
 } & T;
-// declare type PaginatedResponse<T> = {
-//   metadata: {
-//     currentPage: number;
-//     numberOfPages: number;
-//     limit: number;
-//     totalItems: number;
-//   };
-// } & T;
+
 declare type APIResponse<T> = SuccessfulResponse<T> | ErrorResponse;
