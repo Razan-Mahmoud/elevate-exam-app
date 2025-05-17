@@ -5,15 +5,12 @@ export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
   const JWT = await getToken({ req });
 
-  const response = await fetch(
-    `${process.env.API}/questions?${searchParams.toString()}`,
-    {
-      headers: {
-        token: JWT?.token || "",
-      },
-    }
-  );
-  const payload: APIResponse<PaginatedResponse<{ questions: Question[] }>> =
-    await response.json();
+  const response = await fetch(`${process.env.API}/questions?${searchParams.toString()}`, {
+    headers: {
+      token: JWT?.token || "",
+    },
+  });
+  const payload: APIResponse<PaginatedResponse<{ questions: Question[] }>> = await response.json();
+
   return NextResponse.json(payload, { status: response.status });
 }

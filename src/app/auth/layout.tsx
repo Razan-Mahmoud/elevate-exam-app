@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import BroImage from "@/public/assets/images/bro.svg";
+import BroImage from "assets/images/bro.svg";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
@@ -19,16 +19,10 @@ export default function AuthLayout({ children }: LayoutProps) {
             <span className="text-primary ps-4">Elevate</span>
           </h1>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim alias
-            molestiae voluptate rem nemo veniam tempore fugiat quis cupiditate
-            odio.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim alias molestiae voluptate rem nemo veniam tempore fugiat quis
+            cupiditate odio.
           </p>
-          <Image
-            src={BroImage}
-            width={350}
-            height={370}
-            alt="A student taking an exam"
-          />
+          <Image src={BroImage} width={350} height={370} alt="A student taking an exam" />
         </div>
       </div>
 
@@ -44,10 +38,7 @@ export default function AuthLayout({ children }: LayoutProps) {
             {" "}
             <p className="font-bold text-primary">Sign In</p>
           </Link>
-          <Button
-            variant={"outline"}
-            className="text-primary h-10 w-32 rounded-lg p-4 "
-          >
+          <Button variant={"outline"} className="text-primary h-10 w-32 rounded-lg p-4 ">
             <Link href="/auth/register"> Register</Link>
           </Button>
         </div>

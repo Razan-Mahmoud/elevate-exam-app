@@ -5,4 +5,3 @@ declare type Exam = {
   numberOfQuestions: number;
   active: boolean;
 } & DatabaseProperties;
-// _id: string;

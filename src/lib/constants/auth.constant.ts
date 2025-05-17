@@ -1,1 +1,1 @@
-export const Auth_COOKIE = "next-auth.session-token";
+export const AUTH_COOKIE = "next-auth.session-token";

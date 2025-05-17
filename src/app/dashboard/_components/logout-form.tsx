@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { signOut, useSession } from "next-auth/react";
-import LogoutArrow from "@/public/assets/icons/logout-arrow.svg";
+import LogoutArrow from "assets/icons/logout-arrow.svg";
 
 export default function LogoutForm() {
   const { data: session } = useSession();
@@ -16,8 +16,7 @@ export default function LogoutForm() {
         signOut({
           callbackUrl: "/",
         });
-      }}
-    >
+      }}>
       <Image src={LogoutArrow} width={24} height={24} alt="Logout icon" />
       Logout
     </Button>

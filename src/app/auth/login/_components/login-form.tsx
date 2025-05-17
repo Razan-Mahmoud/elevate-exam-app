@@ -6,13 +6,7 @@ import { Input } from "@/components/ui/input";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginFields, loginSchema } from "@/lib/schemes/auth.schema";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Eye } from "lucide-react";
 import { signIn } from "next-auth/react";
 import useLogin from "../_hooks/use-login";
@@ -44,29 +38,26 @@ export default function LoginForm() {
     if (response?.ok) {
       window.location.href = "/dashboard";
     }
+
     console.error(response?.error);
   };
 
   return (
     <div>
       <Form {...form}>
-        <form
-          className="space-y-5 flex flex-col"
-          onSubmit={form.handleSubmit(onSubmit)}
-        >
+        <form className="space-y-5 flex flex-col" onSubmit={form.handleSubmit(onSubmit)}>
           {/* Email */}
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
               <FormItem>
+                {/* Label */}
+                <FormLabel className="sr-only">Email</FormLabel>
+
                 {/* Field */}
                 <FormControl>
-                  <Input
-                    {...field}
-                    placeholder="Enter your email"
-                    type="email"
-                  />
+                  <Input {...field} placeholder="Enter your email" type="email" />
                 </FormControl>
 
                 {/* Feedback */}
@@ -81,13 +72,12 @@ export default function LoginForm() {
               name="password"
               render={({ field }) => (
                 <FormItem>
+                  {/* Label */}
+                  <FormLabel className="sr-only">Password</FormLabel>
+
                   {/* Field */}
                   <FormControl>
-                    <Input
-                      {...field}
-                      placeholder="Enter your password"
-                      type="password"
-                    />
+                    <Input {...field} placeholder="Enter your password" type="password" />
                   </FormControl>
 
                   {/* Feedback */}
@@ -97,12 +87,11 @@ export default function LoginForm() {
             />
             <Eye className="absolute top-2 right-2 text-slate-400" />
           </div>
-          <Link
-            href="/auth/forgot-password"
-            className="text-blue-500 text-right "
-          >
+
+          <Link href="/auth/forgot-password" className="text-blue-500 text-right ">
             Recover Password?
           </Link>
+
           <div>
             {/* {error && (
               <p className="text-sm text-red-600 italic my-4">
